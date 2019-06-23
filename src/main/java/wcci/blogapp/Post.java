@@ -1,16 +1,34 @@
 package wcci.blogapp;
 
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Post {
 
+	@Id
+	@GeneratedValue
 	long id;
-	Author author;
+	
 	String title;
 	String body;
-	String date;
-	Genre genre;
-	String tag;
+	Date date;
 	
-	public Post(long id, Author author, String title, String body, String date, Genre genre, String tag) {
+	@ManyToOne
+	Author author;
+	
+	@ManyToOne
+	Genre genre;
+	
+	@ManyToMany
+	Tag tag;
+	
+	public Post(long id, Author author, String title, String body, Date date, Genre genre, Tag tag) {
 		super();
 		this.id = id;
 		this.author = author;
@@ -37,15 +55,15 @@ public class Post {
 		return body;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public String getGenre() {
+	public Genre getGenre() {
 		return genre;
 	}
 
-	public String getTag() {
+	public Tag getTag() {
 		return tag;
 	}
 
