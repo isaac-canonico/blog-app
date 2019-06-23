@@ -7,10 +7,10 @@ public class Post {
 	String title;
 	String body;
 	String date;
-	String genre;
+	Genre genre;
 	String tag;
 	
-	public Post(long id, Author author, String title, String body, String date, String genre, String tag) {
+	public Post(long id, Author author, String title, String body, String date, Genre genre, String tag) {
 		super();
 		this.id = id;
 		this.author = author;
