@@ -9,17 +9,14 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Tag {
 	
-	String name;
-	
 	@GeneratedValue
 	long id;
 	
 	@ManyToMany (mappedBy = "tag")
-	private Collection<Post> tags;
+	private Collection<Post> posts;
 	
-	public Tag (long id, String name) {
-		this.id = id;
-		this.name = name;
+	public Tag() {
+
 	
 	}
 	}

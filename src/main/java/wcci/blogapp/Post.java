@@ -28,9 +28,7 @@ public class Post {
 	@ManyToMany
 	Tag tag;
 	
-	public Post(long id, Author author, String title, String body, Date date, Genre genre, Tag tag) {
-		super();
-		this.id = id;
+	public Post(Author author, String title, String body, Date date, Genre genre, Tag tag) {
 		this.author = author;
 		this.title = title;
 		this.body = body;
