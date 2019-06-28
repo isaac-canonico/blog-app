@@ -13,7 +13,7 @@ public class AuthorController {
 	public String displayAuthors(Model model) {
 		model.addAttribute("authors",authorRepo.findAll());
 		return "authors";
-		// NEED HTML TEMPLATE ABOVE
+		
 
 	}
 
