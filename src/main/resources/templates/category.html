@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="/stylesheet.css" rel="stylesheet" />
+  <title>Acquisitions inc.</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <section class="header">
+      <h1 class="header__title">
+        <a class="header__title" href="/categories/">WeCanCodeIT Review Repository</a>
+      </h1>
+      <a class="back_to_categories_button" href="./">Back To categories</a>
+    </section>
+    <div class="container">
+      <div class="category__reviews">
+        <div class="reviews__title" th:each="review: ${category.reviews}">
+          <a th:text="${review.title}" th:href="|/reviews/${review.id}|">Review Name
+          </a>
+
+        </div>
+      </div>
+      <form class="review-form" action="/categories/add" method="POST">
+        <label class="review-form__field">Title:
+          <input type="text" name="title" placeholder="Title" />
+        </label>
+        <label class="review-form__field">Content:
+          <input type="text" name="content" placeholder="Content" cols="30" rows="8" />
+        </label>
+        <input type="hidden" name="categoryName" th:value="${category.name}" />
+        <button type="submit">Submit</button>
+      </form>
+      
+      <footer class="footer">
+         
+        <small class="footer__copy"> &copy;2019 Reviews </small>
+      </footer>
+    </div>
+</body>
+</div>
+
+</html>

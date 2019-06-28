@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="/stylesheet.css" rel="stylesheet" />
+  <title>Acquisitions inc.</title>
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <section class="header">
+      <h1 class="header__title">
+        <a class="header__title" href="/categories/">WeCanCodeIT Review Repository</a>
+      </h1>
+      <a class="back_to_category__button" th:href="|/categories/${review.category.name}|">Back To Category </a>
+    </section>
+    <div class="container">
+      <div class="reviews">
+        <h2 class="reviews__title" th:text="${review.title}">Title</h2>
+        <p class="reviews__imageurl" th:text="${review.imageUrl}">ImageURL</p>
+        <p class="reviews__category" th:text="${review.category.name}">
+          Category
+        </p>
+        <p class="reviews__content" th:text="${review.content}">Content</p>
+        
+        
+      </div>
+      <footer class="footer">
+        <small class="footer__copy"> &copy;2019 Reviews </small>
+       
+      </footer>
+    </div>
+</body>
+</div>
+
+</html>
