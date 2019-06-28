@@ -1,5 +1,7 @@
 package wcci.blogapp;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -11,24 +13,28 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Post {
 
+	LocalDateTime now = LocalDateTime.now();
+
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
 	@Id
 	@GeneratedValue
 	long id;
-	
+
 	String title;
 	String body;
-	Date date;
-	
+	String date = now.format(formatter);
+
 	@ManyToOne
 	Author author;
-	
+
 	@ManyToOne
 	Genre genre;
-	
+
 	@ManyToMany
 	Tag tag;
-	
-	public Post(Author author, String title, String body, Date date, Genre genre, Tag tag) {
+
+	public Post(Author author, String title, String body, String date, Genre genre, Tag tag) {
 		this.author = author;
 		this.title = title;
 		this.body = body;
@@ -53,7 +59,7 @@ public class Post {
 		return body;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
