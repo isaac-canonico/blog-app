@@ -22,9 +22,7 @@ public class Initializer implements CommandLineRunner {
 	private TagRepository tagRepo;
 	
 	
-	// add date object functionality
-
-	Author Isaac = new Author("Isaac");
+	// add date object functionality	
 	
 	private Genre personal;
 
@@ -33,7 +31,18 @@ public class Initializer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
+		Author Isaac = new Author("Isaac");
+		authorRepo.save(Isaac);
+		
+		Genre personal = new Genre("personal");
+		genreRepo.save(personal);
+		
+		Tag sad = new Tag("sad");
+		tagRepo.save(sad);
+		
+		
 		postRepo.save(new Post(Isaac, "My Life", "this is it", "", personal, sad));
 
 			}
+}
 }

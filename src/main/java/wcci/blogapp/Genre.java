@@ -14,12 +14,22 @@ public class Genre {
 	
 	@Id
 	long id;
+	
+	String name;
 
 	public Genre() {
 
 	}
 	
+	public Genre(String name) {
+		
+	}
 	
+	
+	public String getName() {
+		return name;
+	}
+
 	public Collection<Post> getPosts() {
 		return posts;
 	}

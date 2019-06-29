@@ -15,9 +15,27 @@ public class Tag {
 	@ManyToMany (mappedBy = "tag")
 	private Collection<Post> posts;
 	
+	String name;
+	
+	public long getId() {
+		return id;
+	}
+
+	public Collection<Post> getPosts() {
+		return posts;
+	}
+
+	public String getName() {
+		return name;
+	}
+
 	public Tag() {
 
 	
+	}
+	
+	public Tag(String name) {
+		
 	}
 	}
 	
