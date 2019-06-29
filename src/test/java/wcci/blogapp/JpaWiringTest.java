@@ -39,7 +39,7 @@ public class JpaWiringTest {
 			authorRepo.save(Isaac);
 			
 			// how to add tag in constructor //
-			Post testPost = new Post(Isaac, "My Life", "This is it", "date", personal, Tag);
+			Post testPost = new Post(Isaac, "My Life", "This is it", "date", personal, tag);
 			postRepo.save(testPost);
 			
 			entityManager.flush();
