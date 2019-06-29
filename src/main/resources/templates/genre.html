@@ -6,5 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="header__title">Bob Loblaw's Law Blog</h1>
+        <h2 class="header__subtitle">a place for friends</h2>
+      </header>
+      <main class="main">
+        <section class="category">
+            <div class="genres__title" th:each="genre: ${genre.reviews}">
+                <a th:text="${post.title}" th:href="|/posts/${post.id}|"> Post title
+        </section>
+      </main>
+      <footer class="footer">
+         
+          <small class="footer__copy"> &copy;2019 Bob Loblaw </small>
+        </footer>
+    </div>
+  </body>
 </html>

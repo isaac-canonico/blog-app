@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
@@ -19,6 +18,7 @@
 			<attribute name="gradle_used_by_scope" value="test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry kind="lib" path="C:/Users/WeCanCodeIT/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.1.5.RELEASE/f33f69b3744d07f832db6ab48eab227ccde9e922/spring-boot-starter-data-jpa-2.1.5.RELEASE.jar">
 		<attributes>
@@ -338,6 +338,11 @@
 	<classpathentry sourcepath="C:/Users/WeCanCodeIT/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.1.5.RELEASE/6552ff67fe5f00374f4ecea5a38a8ac904c5a2a/spring-boot-devtools-2.1.5.RELEASE-sources.jar" kind="lib" path="C:/Users/WeCanCodeIT/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.1.5.RELEASE/82da693e16b112f535e2cb2682a29b23f7378dd0/spring-boot-devtools-2.1.5.RELEASE.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/WeCanCodeIT/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.199/cda9ec0b80ed4eefc4d1cd37781548725a59a738/h2-1.4.199-sources.jar" kind="lib" path="C:/Users/WeCanCodeIT/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.199/7bf08152984ed8859740ae3f97fae6c72771ae45/h2-1.4.199.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/WeCanCodeIT/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.23/1186bcf89d33080275bab74a0b0f495af5c812ef/snakeyaml-1.23-sources.jar" kind="lib" path="C:/Users/WeCanCodeIT/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.23/ec62d74fe50689c28c0ff5b35d3aebcaa8b5be68/snakeyaml-1.23.jar">

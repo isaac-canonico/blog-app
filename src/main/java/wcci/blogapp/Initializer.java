@@ -1,6 +1,5 @@
 package wcci.blogapp;
 
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -16,20 +15,17 @@ public class Initializer implements CommandLineRunner {
 	private AuthorRepository authorRepo;
 	
 	@Autowired
-	private genreRepository genreRepo;
+	private GenreRepository genreRepo;
 	
 	@Autowired
 	private TagRepository tagRepo;
 	
 	
-	// add date object functionality	
-	
-	private Genre personal;
-
-	private Tag sad;
-	
 	@Override
 	public void run(String... args) throws Exception {
+		
+		// add date object functionality	
+		
 		
 		Author Isaac = new Author("Isaac");
 		authorRepo.save(Isaac);
@@ -45,4 +41,4 @@ public class Initializer implements CommandLineRunner {
 
 			}
 }
-}
+

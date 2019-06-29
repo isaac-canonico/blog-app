@@ -34,7 +34,7 @@ public class PostControllerTest {
 		Date date = new Date();
 		Genre java = new Genre();
 		Tag coding = new Tag();
-		Post testPost = new Post(ben, "title1", "blah blah blah", date, java, coding);
+		Post testPost = new Post(ben, "title1", "blah blah blah", "date", java, coding);
 		List<Post> testPosts = Collections.singletonList(testPost);
 		Mockito.when(mockRepo.findAll()).thenReturn(testPosts);
 		underTest.getPosts(mockModel);
