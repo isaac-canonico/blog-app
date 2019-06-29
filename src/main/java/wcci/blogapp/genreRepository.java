@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 @Resource
 
-public interface AuthorRepository extends CrudRepository<Author, Long> {
+public interface genreRepository extends CrudRepository<Genre, Long> {
 	
 
 }
