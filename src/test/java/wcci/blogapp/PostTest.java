@@ -17,19 +17,19 @@ public class PostTest {
 	
 	@Test
 	public void postShouldHaveAllValues() {
-		Post postTest = new  Post(author1, "title1", "body1", date, music, cool);
+		Post postTest = new  Post(author1, "title1", "body1", "date", music, cool);
 		long expectedId = postTest.getId();
 		Author expectedAuthor = postTest.getAuthor();
 		String expectedTitle = postTest.getTitle();
 		String expectedBody = postTest.getBody();
-		Date expectedDate = postTest.getDate();
+		String expectedDate = postTest.getDate();
 		Genre expectedGenre = postTest.getGenre();
 		Tag expectedTag = postTest.getTag();
-		assertThat(expectedId, is(1L));
+		assertThat(expectedId, is(0L));
 		assertThat(expectedAuthor, is(author1));
 		assertThat(expectedTitle, is("title1"));
 		assertThat(expectedBody, is("body1"));
-		assertThat(expectedDate, is(date));
+		assertThat(expectedDate, is("date"));
 		assertThat(expectedGenre, is(music));
 		assertThat(expectedTag, is(cool));
 	}

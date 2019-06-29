@@ -1,7 +1,6 @@
 package wcci.blogapp;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,34 +11,30 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Post {
 
-	LocalDateTime now = LocalDateTime.now();
-
-	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
 	@Id
 	@GeneratedValue
 	long id;
 
 	String title;
 	String body;
-	String date = now.format(formatter);
+	String date;
 
-	@ManyToOne
+	@ManyToOne 
 	Author author;
 
 	@ManyToOne
 	Genre genre;
 
-	@ManyToMany
-	Tag tag;
+	@ManyToMany (mappedBy = "posts")
+	Collection<Tag> tags;
 
-	public Post(Author author, String title, String body, String date, Genre genre, Tag tag) {
+	public Post(Author author, String title, String body, String date, Genre genre, Collection<Tag> tags) {
 		this.author = author;
 		this.title = title;
 		this.body = body;
 		this.date = date;
 		this.genre = genre;
-		this.tag = tag;
+		this.tags = tag;
 	}
 
 	public long getId() {
@@ -66,8 +61,30 @@ public class Post {
 		return genre;
 	}
 
-	public Tag getTag() {
-		return tag;
+	public Collection<Tag> getTags() {
+		return tags;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Post other = (Post) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
 
 }
