@@ -1,5 +1,6 @@
 package wcci.blogapp;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -26,15 +27,18 @@ public class Post {
 	Genre genre;
 
 	@ManyToMany (mappedBy = "posts")
-	Collection<Tag> tags;
+	Collection<Tag> tags = new ArrayList<>();
 
-	public Post(Author author, String title, String body, String date, Genre genre, Collection<Tag> tags) {
+	public Post(Author author, String title, String body, String date, Genre genre, ArrayList<Tag> tags) {
 		this.author = author;
 		this.title = title;
 		this.body = body;
 		this.date = date;
 		this.genre = genre;
-		this.tags = tag;
+	}
+	
+	public Post() {
+
 	}
 
 	public long getId() {

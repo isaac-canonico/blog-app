@@ -2,10 +2,11 @@ package wcci.blogapp;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -37,9 +38,10 @@ public class JpaWiringTest {
 			genreRepo.save(personal);
 			tagRepo.save(sad);			
 			authorRepo.save(Isaac);
-			
+			ArrayList<Tag> tags = new ArrayList<>();
+						
 			// how to add tag in constructor //
-			Post testPost = new Post(Isaac, "My Life", "This is it", "date", personal, tag);
+			Post testPost = new Post(Isaac, "My Life", "This is it", "date", personal, tags);
 			postRepo.save(testPost);
 			
 			entityManager.flush();

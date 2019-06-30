@@ -1,10 +1,12 @@
 package wcci.blogapp;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Author {
@@ -15,7 +17,8 @@ public class Author {
 	
 	String name;
 	
-	Collection<Post> posts;
+	@OneToMany (mappedBy="author")
+	Collection<Post> posts = new ArrayList<>();
 	
 	public long getId() {
 		return id;

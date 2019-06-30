@@ -1,5 +1,7 @@
 package wcci.blogapp;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +29,8 @@ public class PostController {
 		return "post";
 	}
 	@PostMapping("/add")
-	public String addPost(Author author, String title, String body, String date, Genre genre, Tag tag) {
-		postRepo.save(new Post(author, title, body, date, genre, tag));
+	public String addPost(Author author, String title, String body, String date, Genre genre, ArrayList<Tag> tags) {
+		postRepo.save(new Post(author, title, body, date, genre, tags));
 		return "redirect:/reviews/";
 	}
 

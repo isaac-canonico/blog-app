@@ -1,5 +1,6 @@
 package wcci.blogapp;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ public class Tag {
 	long id;
 	
 	@ManyToMany 
-	private Collection<Post> posts;
+	private Collection<Post> posts = new ArrayList<>();
 	
 	String name;
 	
