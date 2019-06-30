@@ -11,7 +11,7 @@
       <h2 th:each="genre: ${genres}">
         <a
           class="genre__name"
-          th:text="${genrey.name}"
+          th:text="${genre.name}"
           th:href="|/genres/${genre.name}|"
           >Genre Name
         </a>

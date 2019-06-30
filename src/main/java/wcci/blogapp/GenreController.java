@@ -6,7 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class AuthorController {
+	
+public class GenreController {
 	
 	@Autowired
 	AuthorRepository authorRepo;
@@ -17,12 +18,13 @@ public class AuthorController {
 	@Autowired
 	GenreRepository genreRepo;
 
-	
-	@RequestMapping("/authors")
-	public String displayAuthors(Model model) {
-		model.addAttribute("authors",authorRepo.findAll());
-		return "authors";
-	
+	@RequestMapping("/genres")
+		public String getGenres(Model model) {
+			model.addAttribute("genres", genreRepo.findAll());
+			return "genres";
+		
+		}
+
 	}
 
-}
+
