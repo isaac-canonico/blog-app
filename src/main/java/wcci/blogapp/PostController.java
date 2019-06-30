@@ -20,18 +20,17 @@ public class PostController {
 		model.addAttribute("posts", postRepo.findAll());
 		return "posts";
 		
-		// NEEDS POST TEMPLATE //
 	}
 	
-	@RequestMapping("/{id}")
+	@RequestMapping("posts/{id}")
 	public String getPost(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("review", postRepo.findById(id).get());
+		model.addAttribute("post", postRepo.findById(id).get());
 		return "post";
 	}
 	@PostMapping("/add")
 	public String addPost(Author author, String title, String body, String date, Genre genre, ArrayList<Tag> tags) {
 		postRepo.save(new Post(author, title, body, date, genre, tags));
-		return "redirect:/reviews/";
+		return "redirect:/posts/";
 	}
 
 }

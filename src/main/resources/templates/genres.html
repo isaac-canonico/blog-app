@@ -7,15 +7,18 @@
     <title>Genres</title>
   </head>
   <body>
+    <header>
+      <h1>Genres</h1>
+    </header>
     <section class="genre">
-      <h2 th:each="genre: ${genres}">
-        <a
-          class="genre__name"
-          th:text="${genre.name}"
-          th:href="|/genres/${genre.name}|"
-          >Genre Name
-        </a>
-      </h2>
+      <h1 th:each="genre:${genres}">
+        <p class="genre__name" th:text="${genre.name}">
+          Genre Name
+        </p>
+      </h1>
     </section>
+    <footer>
+      <small> &copy Lawrence & Isaac </small>
+    </footer>
   </body>
 </html>

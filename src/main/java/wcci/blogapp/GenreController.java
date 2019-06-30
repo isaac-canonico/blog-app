@@ -20,7 +20,7 @@ public class GenreController {
 
 	@RequestMapping("/genres")
 		public String getGenres(Model model) {
-			model.addAttribute("genres", genreRepo.findAll());
+			model.addAttribute("genresAttribute", genreRepo.findAll());
 			return "genres";
 		
 		}

@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>th:text="${post.title}">Title</title>
   </head>
-  <body></body>
+  <body>
+    <h2 class="post__title" th:text="${post.title}">Title</h2>
+    <p class="post__author" th:text="${post.author}">Author Name</p>
+    <p class="post__genre" th:text="${post.genre}">
+      Genre Name
+    </p>
+    <p class="post__body" th:text="${post.body}">body</p>
+    <p class="post__tags" th:text="${post.tags}">tags</p>
+  </body>
 </html>

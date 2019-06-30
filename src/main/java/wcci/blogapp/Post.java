@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
@@ -17,6 +18,8 @@ public class Post {
 	long id;
 
 	String title;
+	
+	@Lob
 	String body;
 	String date;
 
@@ -37,9 +40,7 @@ public class Post {
 		this.genre = genre;
 	}
 	
-	public Post() {
 
-	}
 
 	public long getId() {
 		return id;

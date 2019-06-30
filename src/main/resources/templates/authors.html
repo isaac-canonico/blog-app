@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Authors</title>
   </head>
+  <header>
+    <h1>
+    Authors:
+  </h1>
+  </header>
   <body>
     <h2 th:each="author: ${authors}">
-                   <div class="authors__list">
-            <a class="author__title" th:text="${author.name}" th:href="|/authors/${author.name}|">Author Name
-            </a></div>
-        </h2>
-
-
-
+      <div class="authors__list">
+        <p class="author__title" th:text="${author.name}">
+          Author Name
+        </p>
+      </div>
+    </h2>
+    <footer>
+      <small>&copy Lawrence & Isaac</small>
+    </footer>
   </body>
 </html>
