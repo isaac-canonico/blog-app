@@ -4,21 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/style.css">
+    
     <title>Authors</title>
   </head>
   <header>
     <h1>
-    Authors:
-  </h1>
+      Authors:
+    </h1>
+    <nav class="nav_links">
+      <ul class="individual__nav__links">
+        <li class="genre__link"><a href="/genres"> Genres</a></li>
+        <li class="authors__link"><a href="/authors"> Authors</a></li>
+        <li class="tags__link"><a href="/tags"> Tags</a></li>
+        <li class="posts__link"><a href="/posts"> Posts</a></li>
+      </ul>
+    </nav>
   </header>
+
   <body>
-    <h2 th:each="author: ${authors}">
-      <div class="authors__list">
-        <p class="author__title" th:text="${author.name}">
-          Author Name
-        </p>
-      </div>
-    </h2>
+    <section class="authors">
+      <p th:each="author: ${authors}">
+        <a
+          class="authors__name"
+          th:text="${author.name}"
+          th:href="|/author/${author.id}|"
+          >Author Name
+        </a>
+      </p>
+    </section>
     <footer>
       <small>&copy Lawrence & Isaac</small>
     </footer>

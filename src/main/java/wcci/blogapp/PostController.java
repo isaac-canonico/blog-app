@@ -14,6 +14,12 @@ public class PostController {
 	
 	@Autowired
 	PostRepository postRepo;
+	
+	@Autowired
+	AuthorRepository authorRepo;
+	
+	@Autowired
+	GenreRepository genreRepo;
 
 	@RequestMapping("/posts")
 	public String getPosts(Model model) {
@@ -22,14 +28,15 @@ public class PostController {
 		
 	}
 	
-	@RequestMapping("posts/{id}")
+	@RequestMapping("/posts/{id}")
 	public String getPost(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("post", postRepo.findById(id).get());
 		return "post";
 	}
-	@PostMapping("/add")
-	public String addPost(Author author, String title, String body, String date, Genre genre, ArrayList<Tag> tags) {
-		postRepo.save(new Post(author, title, body, date, genre, tags));
+	@PostMapping("/posts/add")
+	public String addPost(Author author, String title, String body, Genre genre, ArrayList<Tag> tags) {
+		Post newPost = new Post (author, title, body, genre, tags);
+		postRepo.save(newPost);
 		return "redirect:/posts/";
 	}
 

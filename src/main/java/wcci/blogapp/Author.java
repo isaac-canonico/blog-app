@@ -11,11 +11,11 @@ import javax.persistence.OneToMany;
 @Entity
 public class Author {
 	
-	String name;
-	
 	@GeneratedValue
 	@Id
 	long id;
+	
+	String name;
 	
 	@OneToMany (mappedBy="author")
 	Collection<Post> posts = new ArrayList<>();
@@ -33,10 +33,12 @@ public class Author {
 	}
 	
 	public Author() {
+
 		
 	}
 
 	public Author(String name) {
+		this.name = name;
 		
 	}
 	@Override

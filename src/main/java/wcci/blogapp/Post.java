@@ -1,5 +1,6 @@
 package wcci.blogapp;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -21,7 +22,8 @@ public class Post {
 	
 	@Lob
 	String body;
-	String date;
+	
+	private LocalDateTime date;
 
 	@ManyToOne 
 	Author author;
@@ -32,15 +34,19 @@ public class Post {
 	@ManyToMany (mappedBy = "posts")
 	Collection<Tag> tags = new ArrayList<>();
 
-	public Post(Author author, String title, String body, String date, Genre genre, ArrayList<Tag> tags) {
+	public Post(Author author, String title, String body, Genre genre, ArrayList<Tag> tags) {
 		this.author = author;
 		this.title = title;
 		this.body = body;
-		this.date = date;
+		this.date = LocalDateTime.now();
 		this.genre = genre;
+		this.tags = tags;
 	}
 	
-
+	public Post() {
+		
+	}
+	
 
 	public long getId() {
 		return id;
@@ -58,9 +64,7 @@ public class Post {
 		return body;
 	}
 
-	public String getDate() {
-		return date;
-	}
+
 
 	public Genre getGenre() {
 		return genre;
