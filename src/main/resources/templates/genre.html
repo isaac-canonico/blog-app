@@ -13,15 +13,16 @@
         <h2 class="header__subtitle">a place for friends</h2>
       </header>
       <main class="main">
-        <section class="category">
-            <div class="genres__title" th:each="genre: ${genre.reviews}">
-                <a th:text="${post.title}" th:href="|/posts/${post.id}|"> Post title
-        </section>
+        <div class="posts__title" th:each="post: ${genre.posts}">
+          <h2 class="genre__name" th:text="${genre.name}">Name</h2>
+          <a th:text="${post.title}" th:href="|/posts/${post.id}|"
+            >Post Name
+          </a>
+        </div>
       </main>
       <footer class="footer">
-         
-          <small class="footer__copy"> &copy;2019 Lawrence & Isaac </small>
-        </footer>
+        <small class="footer__copy"> &copy;2019 Lawrence & Isaac </small>
+      </footer>
     </div>
   </body>
 </html>

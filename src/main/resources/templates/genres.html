@@ -11,11 +11,14 @@
       <h1>Genres</h1>
     </header>
     <section class="genre">
-      <h1 th:each="genre:${genres}">
-        <p class="genre__name" th:text="${genre.name}">
-          Genre Name
-        </p>
-      </h1>
+      <p th:each="genre: ${genres}">
+        <a
+          class="genres__name"
+          th:text="${genre.name}"
+          th:href="|/genres/${genre.id}|"
+          >Genre Name
+        </a>
+      </p>
     </section>
     <footer>
       <small> &copy Lawrence & Isaac </small>

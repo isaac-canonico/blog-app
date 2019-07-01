@@ -39,8 +39,11 @@ public class Initializer implements CommandLineRunner {
 
 		Tag sad = new Tag("sad");
 		tagRepo.save(sad);
+		Tag fail = new Tag("fail");
+		tagRepo.save(fail);
 		ArrayList<Tag> newTagList = new ArrayList<>();
 		newTagList.add(sad);
+		newTagList.add(fail);
 
 		Post newPost = new Post(Isaac, "My Life",
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -49,8 +52,13 @@ public class Initializer implements CommandLineRunner {
 		
 		Post newPost1 = new Post(Lawrence, "My Life",
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-				"", personal, newTagList);
+				"", art, newTagList);
 		postRepo.save(newPost1);
+		
+		Post newPost2 = new Post(Isaac, "My Secret Life",
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+				"", music, newTagList);
+		postRepo.save(newPost2);
 
 	}
 }

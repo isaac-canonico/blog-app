@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Tags</title>
   </head>
-  <body></body>
+  <body>
+    <section class="tag">
+      <p th:each="tag: ${tags}">
+        <a class="tags__name" th:text="${tag.name}" th:href="|/tags/${tag.id}|"
+          >Tag name
+        </a>
+      </p>
+    </section>
+    <section class="add__tag">
+      <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="tag name" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
 </html>

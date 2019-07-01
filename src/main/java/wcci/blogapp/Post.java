@@ -3,6 +3,7 @@ package wcci.blogapp;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -38,6 +39,11 @@ public class Post {
 		this.body = body;
 		this.date = date;
 		this.genre = genre;
+		this.tags = tags;
+	}
+	
+	public Post() {
+		
 	}
 	
 

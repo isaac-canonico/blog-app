@@ -8,17 +8,20 @@
   </head>
   <header>
     <h1>
-    Authors:
-  </h1>
+      Authors:
+    </h1>
   </header>
   <body>
-    <h2 th:each="author: ${authors}">
-      <div class="authors__list">
-        <p class="author__title" th:text="${author.name}">
-          Author Name
-        </p>
-      </div>
-    </h2>
+    <section class="authors">
+      <p th:each="author: ${authors}">
+        <a
+          class="author__names"
+          th:text="${author.name}"
+          th:href="|/authors/${author.id}|"
+          >Author name
+        </a>
+      </p>
+    </section>
     <footer>
       <small>&copy Lawrence & Isaac</small>
     </footer>
