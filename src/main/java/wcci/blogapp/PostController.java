@@ -35,9 +35,7 @@ public class PostController {
 	}
 	@PostMapping("/posts/add")
 	public String addPost(Author author, String title, String body, Genre genre, ArrayList<Tag> tags) {
-		Author anonymous = new Author("anonymous");
-		ArrayList<Tag> newTags = new ArrayList<>();
-		Post newPost = new Post (anonymous, title, body, "", genre, newTags);
+		Post newPost = new Post (author, title, body, genre, tags);
 		postRepo.save(newPost);
 		return "redirect:/posts/";
 	}

@@ -10,15 +10,24 @@
     <h1>
       Authors:
     </h1>
+    <nav class="nav_links">
+      <ul class="individual__nav__links">
+        <li class="genre__link"><a href="/genres"> Genres</a></li>
+        <li class="authors__link"><a href="/authors"> Authors</a></li>
+        <li class="tags__link"><a href="/tags"> Tags</a></li>
+        <li class="posts__link"><a href="/posts"> Posts</a></li>
+      </ul>
+    </nav>
   </header>
+
   <body>
     <section class="authors">
       <p th:each="author: ${authors}">
         <a
-          class="author__names"
+          class="authors__name"
           th:text="${author.name}"
-          th:href="|/authors/${author.id}|"
-          >Author name
+          th:href="|/author/${author.id}|"
+          >Author Name
         </a>
       </p>
     </section>

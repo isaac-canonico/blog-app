@@ -7,15 +7,24 @@
     <title>Tags</title>
   </head>
   <body>
-    <section class="tag">
-      <p th:each="tag: ${tags}">
-        <a class="tags__name" th:text="${tag.name}" th:href="|/tags/${tag.id}|"
-          >Tag name
-        </a>
-      </p>
-    </section>
+    <header>
+      <h1 class="tags__title">Tags:</h1>
+      <nav class="nav_links">
+        <ul class="individual__nav__links">
+          <li class="genre__link"><a href="/genres"> Genres</a></li>
+          <li class="authors__link"><a href="/authors"> Authors</a></li>
+          <li class="tags__link"><a href="/tags"> Tags</a></li>
+          <li class="posts__link"><a href="/posts"> Posts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article class="tag-title" th:each="tag: ${tags}">
+      <a th:href="|/tags/${tag.id}|">
+        <h3 class="tag-title" th:text="${tag.name}">Tag</h3>
+      </a>
+    </article>
     <section class="add__tag">
-      <form action="/add" method="POST">
+      <form action="add" method="POST">
         <input type="text" name="name" placeholder="tag name" />
         <button type="submit">Submit</button>
       </form>

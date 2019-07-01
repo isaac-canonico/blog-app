@@ -47,17 +47,17 @@ public class Initializer implements CommandLineRunner {
 
 		Post newPost = new Post(Isaac, "My Life",
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-				"", personal, newTagList);
+				 personal, newTagList);
 		postRepo.save(newPost);
 		
 		Post newPost1 = new Post(Lawrence, "My Life",
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-				"", art, newTagList);
+				 art, newTagList);
 		postRepo.save(newPost1);
 		
 		Post newPost2 = new Post(Isaac, "My Secret Life",
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-				"", music, newTagList);
+				 music, newTagList);
 		postRepo.save(newPost2);
 
 	}

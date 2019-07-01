@@ -4,14 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>th:text="${post.title}">Title</title>
+    <title>Post</title>
   </head>
+  <header>
+    <h1 class="post__title" th:text="${post.title}">Title</h1>
+    <nav class="nav_links">
+      <ul class="individual__nav__links">
+        <li class="genre__link"><a href="/genres"> Genres</a></li>
+        <li class="authors__link"><a href="/authors"> Authors</a></li>
+        <li class="tags__link"><a href="/tags"> Tags</a></li>
+        <li class="posts__link"><a href="/posts"> Posts</a></li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <h2 class="post__title" th:text="${post.title}">Title</h2>
-    <p class="post__author" th:text="${post.author}">Author Name</p>
-    <p class="post__genre" th:text="${post.genre}">
-      Genre Name
-    </p>
+    <h2>Author:</h2>
+    <h3 class="post__author" th:text="${post.author.name}">Author Name</h3>
+    <h2>Genre:</h2>
+    <h3 class="genre__name" th:text="${post.genre.name}">Name</h3>
     <p class="post__body" th:text="${post.body}">body</p>
     <p class="post__tags" th:text="${post.tags}">tags</p>
   </body>

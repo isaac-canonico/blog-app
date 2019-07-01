@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/tags")
 public class TagController {
 
 		
@@ -19,19 +18,19 @@ public class TagController {
 		@Autowired
 		TagRepository tagRepo;
 
-		@RequestMapping("/")
+		@RequestMapping("/tags")
 		public String getTags(Model model) {
-			model.addAttribute("tags", tagRepo.findAll());
+			model.addAttribute("tag", tagRepo.findAll());
 			return "tags";
 			
 		}
 		
-		@RequestMapping("/{id}")
+		@RequestMapping("tags/{id}")
 		public String getTag(@PathVariable("id") Long id, Model model) {
 			model.addAttribute("tag", tagRepo.findById(id).get());
 			return "tag";
 		}
-		@PostMapping("/add")
+		@PostMapping("tags/add")
 		public String addTag(String name) {
 			Tag tagAdded = new Tag(name);
 			tagRepo.save(tagAdded);

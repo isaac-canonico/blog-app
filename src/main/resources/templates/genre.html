@@ -11,6 +11,14 @@
       <header class="header">
         <h1 class="header__title">Bob Loblaw's Law Blog</h1>
         <h2 class="header__subtitle">a place for friends</h2>
+        <nav class="nav_links">
+          <ul class="individual__nav__links">
+            <li class="genre__link"><a href="/genres"> Genres</a></li>
+            <li class="authors__link"><a href="/authors"> Authors</a></li>
+            <li class="tags__link"><a href="/tags"> Tags</a></li>
+            <li class="posts__link"><a href="/posts"> Posts</a></li>
+          </ul>
+        </nav>
       </header>
       <main class="main">
         <div class="posts__title" th:each="post: ${genre.posts}">
