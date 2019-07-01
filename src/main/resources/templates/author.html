@@ -6,5 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <body>
+      <div class="wrapper">
+        <header class="header">
+          <h1 class="header__title">Author:</h1>
+          <nav class="nav_links">
+            <ul class="individual__nav__links">
+              <li class="genre__link"><a href="/genres"> Genres</a></li>
+              <li class="authors__link"><a href="/authors"> Authors</a></li>
+              <li class="tags__link"><a href="/tags"> Tags</a></li>
+              <li class="posts__link"><a href="/posts"> Posts</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main class="main">
+          <div class="Authors__title" th:each="post: ${author.posts}">
+            <h2 class="author__name" th:text="${author.name}">Aythor Name</h2>
+            <a th:text="${post.title}" th:href="|/posts/${post.id}|"
+              >Post Name
+            </a>
+          </div>
+        </main>
+        <footer class="footer">
+          <small class="footer__copy"> &copy;2019 Lawrence & Isaac </small>
+        </footer>
+      </div>
+    </body>
+  </html>
+  
+  </body>
 </html>
